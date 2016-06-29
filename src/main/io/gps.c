@@ -129,7 +129,25 @@ static const gpsInitData_t gpsInitData[] = {
 
 #define DEFAULT_BAUD_RATE_INDEX 0
 
+static const uint8_t ubloxInitBaud[] = {
+   //header  , ID        , Length 20,  Payload,  Checksum CK_A CK_B
+   0xB5, 0x62, 0x06, 0x00  //,nned lenght / payload / check sum		
+   //Payload 
+   //Byte Offset 	Number Format 	Scaling 	Name 		Unit 	Description
+   //8 			U4 		- 		baudRate 	Bits/s 	Baudrate in bits/second
+	/// need to change to set baud
+	
+   // will disconnect after setting,  need to reapply and set buad rate in Clean flight to set value	
+   
+   
+   
+};	
+	
 static const uint8_t ubloxInit[] = {
+
+	
+
+
 
     0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x03, 0x03, 0x00,           // CFG-NAV5 - Set engine settings
     0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00,           // Collected by resetting a GPS unit to defaults. Changing mode to Pedistrian and
